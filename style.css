@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Kanit:wght@300&family=Open+Sans&display=swap');
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+}
+body {
+    background: #bdc3c7;
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+    background: linear-gradient(to right, #2c3e50, #bdc3c7);
+    font-family: 'Kanit', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0;
+    height: 100vh;
+}
+.toggle-container{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    width: 200px;
+}
+.toggle{
+    visibility: hidden;
+}
+.label{
+    position: relative;
+    background-color: #fff;
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 15px 0;
+    border-radius: 50px;
+}
+.toggle:checked + .label{
+    background-color: rgb(13 37 56);
+}
+.ball{
+    background-color: rgb(49 67 84);
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    align-items: center;
+    justify-content: center;
+    animation: slideOff 0.3s linear forwards;
+}
+.toggle:checked + .label .ball{
+    animation: slideOn 0.3s linear forwards;
+}
+@keyframes slideOn {
+    0% {
+        transform: translateX(0) scale(1);
+    }
+    50% {
+        transform: translateX(20px) scale(1.2);
+    }
+    100% {
+        transform: translateX(40px) scale(1);
+    }
+}
+
+@keyframes slideOff {
+    0% {
+        transform: translateX(40px) scale(1);
+    }
+    50% {
+        transform: translateX(20px) scale(1.2);
+    }
+    100% {
+        transform: translateX(0) scale(1);
+    }
+}
